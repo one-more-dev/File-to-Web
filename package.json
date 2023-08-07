@@ -1,0 +1,14 @@
+{
+  "name": "texttoweb",
+  "version": "1.0.0",
+  "description": "An application that transforms a .txt list into a web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "one-more-dev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
