@@ -4,8 +4,8 @@
   "description": "An application that transforms a .txt list into a web page",
   "main": "index.js",
   "scripts": {
-    "ndindex": "nodemon index.js",
-    "ndweb": "nodemon webConverter.js"
+    "runnode": "nodemon index.js",
+    "test1": "node modules/fileManager.js"
   },
   "author": "one-more-dev",
   "license": "ISC",

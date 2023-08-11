@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h5>If I am rendered...</h5><br><h1>Welcome to the internet!</h1>
-    <p><%= locals.p %></p>
+    <h1>Título do arquivo</h1>
+
+    <% for(let linha = 0; linha < arquivo.length; linha++){ %>
+    <p><%= locals.arquivo[linha] %></p>
+    <% }%>
+
 </body>
 </html>

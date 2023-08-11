@@ -1,9 +1,22 @@
-// primeiro: um conversor de texto bruto, que apenas respeita as diferentes linhas
-    // depois um que converte para a web
-// segundo: TRATAR O TEXTO COMO UM TODO, AS LINHAS E TUDO MAIS
-const managingFiles = require("./modules/fileManager");
+const express = require('express');
+const app = express();
+const fileManager = require("./modules/fileManager");
+const testingRouter = require("./routes/testingRoute");
 
-(async ()=>{
-    let texto = await managingFiles.readFile("/home/akim-the-second/Desktop/wikipediaPhilosophy.txt");
-    console.log("Meu texto\n",texto);
-}) ()
+const port = 8080;
+const pathForTest = ""
+
+app.set("view engine", "ejs");
+
+
+app.get("/", async (req, res) =>{
+    let arquivo = await fileManager.treatingFile(pathForTest)
+    res.render("index", {
+        arquivo: arquivo
+    });
+})
+
+app.use("/", testingRouter);    //localhost:8080/test
+
+
+app.listen(port, console.log("Running in port ",port))

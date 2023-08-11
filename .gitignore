@@ -1,3 +1,6 @@
 /modules/fileTesting.js
+/routes/testingRoute.js
+/views/testing.ejs
 /testingFiles
 /node_modules
+
