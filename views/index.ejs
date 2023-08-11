@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Converting to Web - <%=locals.titulo %></title>
 </head>
 
 <body>
-    <h1>Título do arquivo</h1>
+    <h1><%=locals.titulo  %></h1>
 
     <% for(let linha = 0; linha < arquivo.length; linha++){ %>
     <p><%= locals.arquivo[linha] %></p>

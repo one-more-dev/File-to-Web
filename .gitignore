@@ -3,4 +3,5 @@
 /views/testing.ejs
 /testingFiles
 /node_modules
+.env
 
