@@ -1,0 +1,38 @@
+<p class="intro_text">Load a file from your computer, so it will be converted into a web page.
+    Choose the format as well, simple text or list</p>
+
+<form action="file" method="post" class="options">
+    <div class="option_elm option_file">
+        <label for="path">File path:
+        <input type="text" name="path" id="filePath"/></label>
+    </div>
+
+    <div class="option_elm option_format">
+        <span>Format to Convert:</span>
+        <input type="radio" data-radio="texto" name="formato" value="texto"/>
+        <label for="texto">Text</label>
+        <input type="radio" data-radio="lista" name="formato" value="lista"/>
+        <label for="lista">List</label>
+    </div>
+
+    <div class="option_elm option_ordering">
+        <label for="list_order">Order list</label>
+        <select name="list_order" id="list">
+            <option value="default_value">Default</option>
+            <option value="a_z">A - Z</option>
+            <option value="z_a">Z - A</option>
+        </select>
+    </div>
+
+    <div class="option_elm option_separator">
+        <label for="list_separator">List separator</label>
+        <input type="text" name="list_separator" id="list_separator" maxlength="3" value=":" required/>
+    </div>
+
+    <div class="option_elm check_line">
+        <input type="checkbox" id="lines" name="lines" />
+        <label for="lines">Include empty lines</label>
+    </div>
+
+    <input type="submit" id="bringButton" value="Upload file"/>
+</form>

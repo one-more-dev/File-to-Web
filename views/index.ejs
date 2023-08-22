@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Converting to Web - <%=locals.titulo %></title>
-</head>
+<%- include('./partials/head.ejs'); %>
 
 <body>
-    <h1><%=locals.titulo  %></h1>
+    <div class="home">
+        <h1><%=locals.titulo || "Converting Local files to Web text" %></h1>
+        <p class="opt"><%- include('./partials/form.ejs'); %></p>
+    </div>
 
-    <% for(let linha = 0; linha < arquivo.length; linha++){ %>
-    <p><%= locals.arquivo[linha] %></p>
-    <% }%>
-
+<script src="/script/script.js"></script>
 </body>
 </html>

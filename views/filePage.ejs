@@ -1,0 +1,35 @@
+<%- include('./partials/head.ejs'); %>
+<body>
+    <h1><%= titulo %></h1>
+    
+    <div class="arquivo">
+        <p style="color: red;"><%= locals.erro || "" %></p>
+
+        <% if(locals.tipoDeArquivo === 'texto'){ %>
+            <% for(let linha = 0; linha < arquivo.length; linha++){ %>
+                <p><%= locals.arquivo[linha] %></p>
+            <% } %>
+
+        <% }else if(locals.tipoDeArquivo === 'lista'){ %>
+            <table>
+            <% for(let linha = 0; linha < arquivo.length; linha++){ %>
+                <tr>
+                    <td class="celula celula1">
+                        <%= locals.arquivo[linha][0] %>
+                    </td>
+                    <td class="celula celula2">
+                        <%= locals.arquivo[linha].slice(1).join(locals.separador) %>
+                    </td>
+                </tr>
+            <% } %>
+            </table>
+        <% }%>
+    </div>
+    
+    <button class="return_btn">Return initial page</button>
+<script>
+    const btn = document.getElementsByClassName("return_btn")[0]
+    btn.addEventListener("click", () => location.href = "http://localhost:8080/")
+</script>
+</body>
+</html>

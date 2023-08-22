@@ -11,20 +11,23 @@ const readFile = async (fileToRead) => {
         let fileToRead = await fs.promises.readFile(path.join(file.dir,file.base), "utf8");
         return fileToRead;
     }catch(erro){
-        console.log("Something occured while accesing the file: "+ chalk.red(erro));
+        throw Error(chalk.red(`An Error occurred reading the file: ${erro.message}`))
     }
 }
 
-const treatingFile = async (file) => {
+const treatingFile = async (file, includeLines = false) => {
     const linebreak = /\n/gm;
     try{
         let arquivoValidado = await validatingFile(file);
         arquivoValidado = arquivoValidado.split(linebreak);
+        if(includeLines === false){
+            arquivoValidado = arquivoValidado.filter(line => line !== "")
+        }
         return arquivoValidado;
     }catch(erro){
         const errorMessage = `An Error on treating the file occurred: ${erro.message}`;
         console.log(errorMessage)
-        return [errorMessage]
+        throw Error(chalk.red(errorMessage))
     }
 }
 
@@ -41,7 +44,7 @@ const validatingFile = async (pathToFile = pathway[2]) => {
     if(!fs.lstatSync(pathToFile).isFile()){     // STEP 2: Checking if it is a file
         throw Error(chalk.red("This path is not a (readable) file. Try another path"))
     }
-    let arquivoValidado = await readFile(pathToFile)    // SUCESS CASE
+    let arquivoValidado = await readFile(pathToFile)    // STEP 3: SUCESS CASE
     return arquivoValidado;
 }
 

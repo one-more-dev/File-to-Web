@@ -1,0 +1,17 @@
+body{
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: rgb(7, 86, 112);
+}
+h1,
+.intro_text{
+    margin-bottom: 25px;
+    text-align: center;
+}
+.arquivo p{
+    min-height: 18px;
+}
+.return_btn{
+    margin: 70px 20px 20px 20px;
+}

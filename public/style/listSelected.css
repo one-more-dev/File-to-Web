@@ -1,0 +1,25 @@
+.options,
+.option_elm{
+    display: inline-block;
+    margin-right: 40px;
+}
+.options{
+    margin: 40px 0;
+}
+#list_separator{
+    width: 45px;
+}
+
+table{
+    margin: auto;
+}
+table tr{
+    height: 26px;
+}
+table .celula{
+    box-sizing: border-box;
+    padding: 4px 20px;
+}
+table .celula1{
+    text-align: end;
+}
