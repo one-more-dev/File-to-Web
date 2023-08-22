@@ -1,7 +1,7 @@
 /modules/fileTesting.js
 /routes/testingRoute.js
+/testingFiles/text.txt
 /views/testing.ejs
-/testingFiles
 /node_modules
 /routes
 .env
